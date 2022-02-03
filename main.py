@@ -2,9 +2,10 @@ import numpy as np
 
 try:
     N = int(input('Number of dices: '))
+    print(f'Sum range is {1 * N} - {6 * N}')
     S = int(input('Sum to check: '))
-    if S > 6 * N:
-        print(f'Max sum is {6 * N}!')
+    if S not in range((1 * N), (6 * N)+1):
+        print(f'Sum is out of range!')
         exit()
 except ValueError:
     print('Please use int numbers only!')
@@ -30,4 +31,5 @@ for i in range(1, N):
             if (j - k) >= 0:
                 p_count[i, j] = p_count[i, j] + p_count[i - 1, j - k]
 
-print(f"Selected sum probability is {(p_count[N - 1, S - 1]) / (6 ** N)}")
+result = (p_count[N - 1, S - 1]) / (6 ** N)
+print(f'Selected sum probability is {"%.5f" % result}')

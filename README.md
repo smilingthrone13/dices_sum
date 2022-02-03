@@ -12,10 +12,6 @@
 ### Технологии
 - Python 3.9 (библиотека NumPy)
 
-### Клонируйте проект 
-```
-git clone git@github.com:smilingthrone13/dices_sum.git
-```
 ### Запустите проект
 ```bash
 python main.py
